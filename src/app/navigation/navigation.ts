@@ -18,15 +18,22 @@ export const navigation: FuseNavigation[] = [
                 id       : 'users',
                 title    : 'Users',
                 type     : 'item',
-                icon     : 'user',
+                icon     : 'person',
                 url      : '/users',
             },
             {
                 id       : 'drivers',
                 title    : 'Drivers',
                 type     : 'item',
-                icon     : 'car',
+                icon     : 'airline_seat_recline_extra',
                 url      : '/drivers',
+            },
+            {
+                id       : 'bookings',
+                title    : 'Bookings',
+                type     : 'item',
+                icon     : 'bookmarks',
+                url      : '/bookings',
             }
         ]
     }

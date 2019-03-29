@@ -19,6 +19,10 @@ import { LayoutModule } from 'app/layout/layout.module';
 import { SampleModule } from 'app/main/sample/sample.module';
 import {UsersModule} from './main/users/users.module';
 import {DriversModule} from './main/drivers/drivers.module';
+import {BookingsModule} from './main/bookings/bookings.module';
+import {RegisterModule} from './main/register/register.module';
+import {LoginModule} from './main/login/login.module';
+
 
 const appRoutes: Routes = [
     {
@@ -29,7 +33,8 @@ const appRoutes: Routes = [
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+
     ],
     imports     : [
         BrowserModule,
@@ -57,7 +62,10 @@ const appRoutes: Routes = [
         LayoutModule,
         SampleModule,
         UsersModule,
-        DriversModule
+        DriversModule,
+        BookingsModule,
+        LoginModule,
+        RegisterModule
     ],
     bootstrap   : [
         AppComponent
