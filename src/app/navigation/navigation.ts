@@ -34,7 +34,11 @@ export const navigation: FuseNavigation[] = [
                 type     : 'item',
                 icon     : 'bookmarks',
                 url      : '/bookings',
-            }
+            },
+
+
+
+
         ]
     }
 ];

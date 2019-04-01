@@ -5,16 +5,11 @@ import {RouterModule} from '@angular/router';
 import {TranslateModule} from '@ngx-translate/core';
 import {FuseSharedModule} from '../../../@fuse/shared.module';
 import {MatIconModule} from '@angular/material';
-const routes = [
-    {
-        path: 'drivers',
-        component: DriversComponent
-    }
-    ];
+
 @NgModule({
   declarations: [DriversComponent],
   imports: [
-      RouterModule.forChild(routes),
+
       CommonModule,
       TranslateModule,
       FuseSharedModule,

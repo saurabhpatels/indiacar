@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+
 import {
     MatButtonModule,
     MatCheckboxModule,
@@ -6,12 +7,13 @@ import {
     MatIconModule,
     MatInputModule
 } from "@angular/material";
+
 import { FuseSharedModule } from "@fuse/shared.module";
-import { LoginComponent } from "./login.component";
+import { RegisterComponent } from "./register.component";
 import { AppRoutingModule } from "../../app-routing.module";
 
 @NgModule({
-    declarations: [LoginComponent],
+    declarations: [RegisterComponent],
     imports: [
         MatButtonModule,
         MatCheckboxModule,
@@ -22,4 +24,4 @@ import { AppRoutingModule } from "../../app-routing.module";
         AppRoutingModule
     ]
 })
-export class LoginModule {}
+export class RegisterModule {}

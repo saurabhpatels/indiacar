@@ -1,46 +1,43 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule, Routes } from '@angular/router';
-import { MatMomentDateModule } from '@angular/material-moment-adapter';
-import { MatButtonModule, MatIconModule } from '@angular/material';
-import { TranslateModule } from '@ngx-translate/core';
-import 'hammerjs';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import { MatButtonModule, MatIconModule } from "@angular/material";
+import { TranslateModule } from "@ngx-translate/core";
+import "hammerjs";
+import { FuseModule } from "@fuse/fuse.module";
+import { FuseSharedModule } from "@fuse/shared.module";
+import {
+    FuseProgressBarModule,
+    FuseSidebarModule,
+    FuseThemeOptionsModule
+} from "@fuse/components";
+import { fuseConfig } from "app/fuse-config";
+import { AppComponent } from "app/app.component";
+import { LayoutModule } from "app/layout/layout.module";
+import { SampleModule } from "app/main/sample/sample.module";
+import { UsersModule } from "./main/users/users.module";
+import { DriversModule } from "./main/drivers/drivers.module";
+import { BookingsModule } from "./main/bookings/bookings.module";
 
-import { FuseModule } from '@fuse/fuse.module';
-import { FuseSharedModule } from '@fuse/shared.module';
-import { FuseProgressBarModule, FuseSidebarModule, FuseThemeOptionsModule } from '@fuse/components';
-
-import { fuseConfig } from 'app/fuse-config';
-
-import { AppComponent } from 'app/app.component';
-import { LayoutModule } from 'app/layout/layout.module';
-import { SampleModule } from 'app/main/sample/sample.module';
-import {UsersModule} from './main/users/users.module';
-import {DriversModule} from './main/drivers/drivers.module';
-import {BookingsModule} from './main/bookings/bookings.module';
-import {RegisterModule} from './main/register/register.module';
-import {LoginModule} from './main/login/login.module';
-
-
-const appRoutes: Routes = [
-    {
-        path      : '**',
-        redirectTo: 'sample'
-    }
-];
+import { LoginModule } from "./main/login/login.module";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { environment } from "../environments/environment";
+import { ForgotPasswordModule } from "./main/forgot-password/forgot-password.module";
+import { AuthService } from "./auth.service";
+import { RegisterModule } from "./main/register/register.module";
+import { MailConfirmModule } from "./main/mail-confirm/mail-confirm.module";
+import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
-    declarations: [
-        AppComponent,
-
-    ],
-    imports     : [
+    declarations: [AppComponent],
+    imports: [
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        RouterModule.forRoot(appRoutes),
 
         TranslateModule.forRoot(),
 
@@ -65,12 +62,16 @@ const appRoutes: Routes = [
         DriversModule,
         BookingsModule,
         LoginModule,
-        RegisterModule
+
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,
+        AngularFirestoreModule,
+        ForgotPasswordModule,
+        RegisterModule,
+        MailConfirmModule,
+        AppRoutingModule
     ],
-    bootstrap   : [
-        AppComponent
-    ]
+    providers: [AuthService],
+    bootstrap: [AppComponent]
 })
-export class AppModule
-{
-}
+export class AppModule {}

@@ -18,6 +18,7 @@ import { ToolbarComponent } from 'app/layout/components/toolbar/toolbar.componen
         MatMenuModule,
         MatToolbarModule,
 
+
         FuseSharedModule,
         FuseSearchBarModule,
         FuseShortcutsModule

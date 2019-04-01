@@ -215,12 +215,23 @@
         <!-- / FUSE Splash Screen -->
 
         <app></app>
-        <script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>
+       <!-- <script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>
         <script>
-            document.addEventListener('mousewheel', mousewheel, true);
-            function mousewheel (e) {
-            }
-        </script>
+            document.addEventListener('mousewheel', (evt) => {
+                // ... do stuff with evt
+            }, {
+                capture: true,
+                passive: false
+            });
+            document.addEventListener('wheel', (evt) => {
+                // ... do stuff with evt
+            }, {
+                capture: true,
+                passive: false
+            });
+
+        </script> -->
     </body>
+
 
 </html>

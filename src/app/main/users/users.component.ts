@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../auth.service';
 
 export interface PeriodicElement {
     name: string;
@@ -19,6 +20,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
     {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -26,7 +28,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  constructor(  public authService: AuthService) { }
     displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
     dataSource = ELEMENT_DATA;
 

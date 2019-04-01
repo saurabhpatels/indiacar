@@ -6,19 +6,14 @@ import { FuseSharedModule } from '@fuse/shared.module';
 
 import { SampleComponent } from './sample.component';
 
-const routes = [
-    {
-        path     : 'sample',
-        component: SampleComponent
-    }
-];
+
 
 @NgModule({
     declarations: [
         SampleComponent
     ],
     imports     : [
-        RouterModule.forChild(routes),
+
 
         TranslateModule,
 

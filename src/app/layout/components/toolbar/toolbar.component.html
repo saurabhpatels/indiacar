@@ -25,16 +25,16 @@
 
         <div class="" fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
 
-            <button mat-button [matMenuTriggerFor]="userMenu"
+            <button *ngIf="authService.userData as user" mat-button [matMenuTriggerFor]="userMenu"
                     class="user-button">
                 <div fxLayout="row" fxLayoutAlign="center center">
-                    <img class="avatar mr-0 mr-sm-16" src="assets/images/avatars/Velazquez.jpg">
-                    <span class="username mr-12" fxHide fxShow.gt-sm>Charlie Adams</span>
+                    <img class="avatar mr-0 mr-sm-16" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}">
+                    <span class="username mr-12" fxHide fxShow.gt-sm>{{(user.displayName) ? user.displayName : 'User'}}</span>
                     <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
                 </div>
             </button>
 
-            <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+            <mat-menu  #userMenu="matMenu" [overlapTrigger]="false">
 
                 <button mat-menu-item>
                     <mat-icon>account_circle</mat-icon>
@@ -47,10 +47,14 @@
                 </button>
 
                 <button mat-menu-item class="">
+
                     <mat-icon>exit_to_app</mat-icon>
-                    <a class="link" [routerLink]="'/login'">Login</a>
-                    <span>Login</span>
+                    <button (click)="authService.SignOut()" mat-raised-button color="warn" class="submit-button" aria-label="">LogOut
+
+                    </button>
+
                 </button>
+
 
             </mat-menu>
 
