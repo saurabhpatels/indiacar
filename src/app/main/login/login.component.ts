@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { FuseConfigService } from "@fuse/services/config.service";
 import { fuseAnimations } from "@fuse/animations";
 import { AuthService } from "../../auth.service";
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
     selector: "login",
     templateUrl: "./login.component.html",

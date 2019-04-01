@@ -31,6 +31,8 @@ import { AuthService } from "./auth.service";
 import { RegisterModule } from "./main/register/register.module";
 import { MailConfirmModule } from "./main/mail-confirm/mail-confirm.module";
 import { AppRoutingModule } from "./app-routing.module";
+import {ToastrModule} from 'ngx-toastr';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [AppComponent],
@@ -69,7 +71,18 @@ import { AppRoutingModule } from "./app-routing.module";
         ForgotPasswordModule,
         RegisterModule,
         MailConfirmModule,
-        AppRoutingModule
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot({
+            positionClass: 'toast-top-center',
+            preventDuplicates: true,
+            timeOut: 1500,
+            progressBar:true,
+            closeButton: true,
+
+        }),
+        ReactiveFormsModule,
+        HttpClientModule
     ],
     providers: [AuthService],
     bootstrap: [AppComponent]
