@@ -35,6 +35,7 @@ EndTime: 07:10 PM
 
 
 #Tommorow's Task [02/04/2019]
+#Learning Angular7
 -Perform opreations With Realtime Database
 
 
