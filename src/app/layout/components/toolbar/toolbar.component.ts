@@ -1,19 +1,25 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from "@angular/core";
-import { Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
-import { TranslateService } from "@ngx-translate/core";
-import * as _ from "lodash";
-import { AuthService } from "../../../auth.service";
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
+import * as _ from 'lodash';
+import { AuthService } from '../../../auth.service';
+import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
+import { NavigationCancel,
+    Event,
+    NavigationEnd,
+    NavigationError,
+    NavigationStart,
+    Router } from '@angular/router';
+import { FuseConfigService } from '@fuse/services/config.service';
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
-import { FuseConfigService } from "@fuse/services/config.service";
-import { FuseSidebarService } from "@fuse/components/sidebar/sidebar.service";
-
-import { navigation } from "app/navigation/navigation";
+import { navigation } from 'app/navigation/navigation';
 
 @Component({
-    selector: "toolbar",
-    templateUrl: "./toolbar.component.html",
-    styleUrls: ["./toolbar.component.scss"],
+    selector: 'toolbar',
+    templateUrl: './toolbar.component.html',
+    styleUrls: ['./toolbar.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
@@ -28,59 +34,59 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     // Private
     private _unsubscribeAll: Subject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {FuseConfigService} _fuseConfigService
-     * @param {FuseSidebarService} _fuseSidebarService
-     * @param {TranslateService} _translateService
-     * @param authService
-     */
+
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _fuseSidebarService: FuseSidebarService,
         private _translateService: TranslateService,
-        public authService: AuthService
+        public authService: AuthService,
+        private _loadingBar: SlimLoadingBarService,
+        private _router: Router
     ) {
+
+
+        this._router.events.subscribe((event: Event) => {
+        this.navigationInterceptor(event);
+    });
         // Set the defaults
         this.userStatusOptions = [
             {
-                title: "Online",
-                icon: "icon-checkbox-marked-circle",
-                color: "#4CAF50"
+                title: 'Online',
+                icon: 'icon-checkbox-marked-circle',
+                color: '#4CAF50'
             },
             {
-                title: "Away",
-                icon: "icon-clock",
-                color: "#FFC107"
+                title: 'Away',
+                icon: 'icon-clock',
+                color: '#FFC107'
             },
             {
-                title: "Do not Disturb",
-                icon: "icon-minus-circle",
-                color: "#F44336"
+                title: 'Do not Disturb',
+                icon: 'icon-minus-circle',
+                color: '#F44336'
             },
             {
-                title: "Invisible",
-                icon: "icon-checkbox-blank-circle-outline",
-                color: "#BDBDBD"
+                title: 'Invisible',
+                icon: 'icon-checkbox-blank-circle-outline',
+                color: '#BDBDBD'
             },
             {
-                title: "Offline",
-                icon: "icon-checkbox-blank-circle-outline",
-                color: "#616161"
+                title: 'Offline',
+                icon: 'icon-checkbox-blank-circle-outline',
+                color: '#616161'
             }
         ];
 
         this.languages = [
             {
-                id: "en",
-                title: "English",
-                flag: "us"
+                id: 'en',
+                title: 'English',
+                flag: 'us'
             },
             {
-                id: "tr",
-                title: "Turkish",
-                flag: "tr"
+                id: 'tr',
+                title: 'Turkish',
+                flag: 'tr'
             }
         ];
 
@@ -89,22 +95,29 @@ export class ToolbarComponent implements OnInit, OnDestroy {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
+    private navigationInterceptor(event: Event): void {
+        if (event instanceof NavigationStart) {
+            this._loadingBar.start();
+        }
+        if (event instanceof NavigationEnd) {
+            this._loadingBar.complete();
+        }
+        if (event instanceof NavigationCancel) {
+            this._loadingBar.stop();
+        }
+        if (event instanceof NavigationError) {
+            this._loadingBar.stop();
+        }
+    }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
     ngOnInit(): void {
         // Subscribe to the config changes
         this._fuseConfigService.config
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(settings => {
                 this.horizontalNavbar =
-                    settings.layout.navbar.position === "top";
-                this.rightNavbar = settings.layout.navbar.position === "right";
+                    settings.layout.navbar.position === 'top';
+                this.rightNavbar = settings.layout.navbar.position === 'right';
                 this.hiddenNavbar = settings.layout.navbar.hidden === true;
             });
 
@@ -114,48 +127,15 @@ export class ToolbarComponent implements OnInit, OnDestroy {
         });
     }
 
-    /**
-     * On destroy
-     */
+
     ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * Toggle sidebar open
-     *
-     * @param key
-     */
-    toggleSidebarOpen(key): void {
-        this._fuseSidebarService.getSidebar(key).toggleOpen();
-    }
 
-    /**
-     * Search
-     *
-     * @param value
-     */
-    search(value): void {
-        // Do your search here...
-        console.log(value);
-    }
 
-    /**
-     * Set the language
-     *
-     * @param lang
-     */
-    setLanguage(lang): void {
-        // Set the selected language for the toolbar
-        this.selectedLanguage = lang;
 
-        // Use the selected language for translations
-        this._translateService.use(lang.id);
-    }
 }

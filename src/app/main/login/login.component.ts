@@ -1,13 +1,13 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { FuseConfigService } from "@fuse/services/config.service";
-import { fuseAnimations } from "@fuse/animations";
-import { AuthService } from "../../auth.service";
-import { ToastrService } from 'ngx-toastr';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FuseConfigService } from '@fuse/services/config.service';
+import { fuseAnimations } from '@fuse/animations';
+import { AuthService } from '../../auth.service';
+
 @Component({
-    selector: "login",
-    templateUrl: "./login.component.html",
-    styleUrls: ["./login.component.scss"],
+    selector: 'login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
     encapsulation: ViewEncapsulation.None,
     animations: fuseAnimations
 })
@@ -39,8 +39,8 @@ export class LoginComponent implements OnInit {
 
     ngOnInit(): void {
         this.loginForm = this._formBuilder.group({
-            username: ["", Validators.required],
-            password: ["", Validators.required]
+            username: ['', Validators.required],
+            password: ['', Validators.required]
         });
     }
 }

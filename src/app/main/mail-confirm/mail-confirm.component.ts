@@ -13,12 +13,7 @@ import {AuthService} from '../../auth.service';
 })
 export class MailConfirmComponent
 {
-    /**
-     * Constructor
-     *
-     * @param {FuseConfigService} _fuseConfigService
-     * @param authService
-     */
+
     constructor(
         private _fuseConfigService: FuseConfigService,
         public authService: AuthService
