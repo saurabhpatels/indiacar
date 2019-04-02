@@ -1,12 +1,9 @@
-# Fuse - Angular
+# Inida - Car
 
-Material Design Admin Template with Angular 7+ and Angular Material
+India Car Taxi& Cabs
 
 ## The Community
-
-Share your ideas, discuss Fuse and help each other.
-
-[Click here](http://fusetheme.com/community) to see our Community page.
+Smarten Digital
 
 ## Development server
 
