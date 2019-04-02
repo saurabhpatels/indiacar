@@ -1,6 +1,43 @@
 table {
     width: 100%;
 }
+
+
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px !important;
+    overflow: auto;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+::ng-deep .mat-paginator-container{
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.mat-accent-bg {
+    background-color: #03a9f4 !important;
+    color: white !important;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.agent{
+    margin: 0 05px 0 0;
+    border: 1px solid #CED4DA;
+    border-radius: .25rem;
+    height: 35px;
+    width: 100px;
+}
+
+::ng-deep .agent .mat-select-trigger{
+    padding: 7px 5px;
+}
+.no-data-found{
+    text-align: center!important;
+    font-size: 1.5em!important;
+}
+
+
 .my-spin-one{
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
@@ -8,4 +45,15 @@ table {
     height: 100%;
     left: 0;
     z-index: 2;
+}
+.angular-material-elements {
+    position: relative;
+}
+.cus-spinner{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
 }
