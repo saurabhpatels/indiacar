@@ -4,16 +4,16 @@ import { Platform } from '@angular/cdk/platform';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-
 import { FuseConfigService } from '@fuse/services/config.service';
 import { FuseNavigationService } from '@fuse/components/navigation/navigation.service';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { FuseSplashScreenService } from '@fuse/services/splash-screen.service';
 import { FuseTranslationLoaderService } from '@fuse/services/translation-loader.service';
-
 import { navigation } from 'app/navigation/navigation';
 import { locale as navigationEnglish } from 'app/navigation/i18n/en';
 import { locale as navigationTurkish } from 'app/navigation/i18n/tr';
+import {ToastrService} from 'ngx-toastr';
+import { ConnectionService } from 'ng-connection-service';
 
 @Component({
     selector   : 'app',
@@ -22,6 +22,9 @@ import { locale as navigationTurkish } from 'app/navigation/i18n/tr';
 })
 export class AppComponent implements OnInit, OnDestroy
 {
+    status = 'ONLINE';
+    isConnected = true;
+
     fuseConfig: any;
     navigation: any;
 
@@ -38,10 +41,27 @@ export class AppComponent implements OnInit, OnDestroy
         private _fuseTranslationLoaderService: FuseTranslationLoaderService,
         private _translateService: TranslateService,
         private _platform: Platform,
+        private _toast: ToastrService,
+        private connectionService: ConnectionService
 
     )
     {
-
+        this.connectionService.monitor().subscribe(isConnected => {
+            this.isConnected = isConnected;
+            if (this.isConnected) {
+                this._toast.success('Internet Connection Established', 'Connected', {
+                    positionClass: 'toast-top-full-width',
+                });
+                console.log('connected');
+            }
+            else {
+                console.log(' Not Connected');
+                this._toast.error('Your Connection Has Limited Or No Connectivity', 'No Internet', {
+                    positionClass: 'toast-top-full-width',
+                    timeOut: 1000000000000000000
+                });
+            }
+        });
 
         // Get default navigation
         this.navigation = navigation;

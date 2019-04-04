@@ -1,13 +1,13 @@
-import { Injectable, NgZone } from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
 import {User} from './shared/services/user';
-import { auth } from 'firebase/app';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Router } from '@angular/router';
+import {auth} from 'firebase/app';
+import {AngularFireAuth} from '@angular/fire/auth';
+import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
+import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class AuthService {
     userData: any; // Save logged in user data
@@ -40,7 +40,7 @@ export class AuthService {
             .then((result) => {
                 this.ngZone.run(() => {
                     this.router.navigate(['sample']);
-                    this.toastr.success('SuccessFully Logged In!', 'Welcome',{
+                    this.toastr.success('SuccessFully Logged In!', 'Welcome', {
                         timeOut: 1000
                     });
                 });
@@ -57,7 +57,7 @@ export class AuthService {
                 /* Call the SendVerificaitonMail() function when new user sign
                 up and returns promise */
                 this.SendVerificationMail();
-                this.toastr.info('Please Check Your Email','Reminder',{
+                this.toastr.info('Please Check Your Email', 'Reminder', {
                     timeOut: 3000
                 });
                 this.SetUserData(result.user);
@@ -78,14 +78,14 @@ export class AuthService {
     ForgotPassword(passwordResetEmail) {
         return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
             .then(() => {
-                this.toastr.info('Password Reset Email Sent, Check Your Inbox.','Reminder',{
+                this.toastr.info('Password Reset Email Sent, Check Your Inbox.', 'Reminder', {
                     timeOut: 3000
                 });
 
             }).catch((error) => {
-               this.toastr.error('Invalid Email','Error',{
-                   timeOut: 3000
-               });
+                this.toastr.error('Invalid Email', 'Error', {
+                    timeOut: 3000
+                });
             });
     }
 
@@ -105,12 +105,12 @@ export class AuthService {
         return this.afAuth.auth.signInWithPopup(provider)
             .then((result) => {
                 this.ngZone.run(() => {
-                    this.toastr.success('Loging in','Please Wait');
+                    this.toastr.success('Loging in', 'Please Wait');
                     this.router.navigate(['sample']);
                 });
                 this.SetUserData(result.user);
             }).catch((error) => {
-                this.toastr.error(error,'Error');
+                this.toastr.error(error, 'Error');
             });
     }
 
@@ -135,9 +135,9 @@ export class AuthService {
     SignOut() {
         console.log('logout');
         return this.afAuth.auth.signOut().then(() => {
-            this.toastr.success('Logging Out!', 'Wait',{
+            this.toastr.success('Logging Out!', 'Wait', {
                 timeOut: 1000,
-                progressBar:false,
+                progressBar: false,
                 closeButton: false,
             });
             localStorage.removeItem('user');

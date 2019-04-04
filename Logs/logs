@@ -1,0 +1,30 @@
+DAILY WORK REPORT
+Name: Saurabh Patel
+Date: 03-04-2019
+StartTime: 9:45 AM
+LunchTime: 1:30 PM TO 2:15 PM
+EndTime: 07:50 PM
+
+#DemoAngular: [4H:00]
+[30M] - R&D On Dragabble&Dropable Module.
+[30M] - Created Two CDK Droplist
+[15M] - Transfer Items Between Lists using cdkDropList
+[30M] - Created MoveItem Array & TransferArray Events
+[30m] - Solve error - Droplist Keep Repeating same Items
+[30m] - Created New CopyItemArray Events
+[15m] - CopiedItemArray to cdkDropListDropped
+[30m] - Solved TransferArray Event error
+
+#Other
+[1H]  - PC TroubleShooting(Anand Singh)
+
+#Learn Angular:[3H:00]
+[30M] - Angular CDK/DragDrop
+[30M] - Service worker communication
+[30M] - Internationlization
+[30M] - Virtual Scrolling
+[30M] - Grunt Js
+[30M] - R&d On Vector Line Into Draggable Elements
+
+#Learn Angular
+#Demo Angular

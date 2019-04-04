@@ -1,20 +1,14 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { TranslateService } from '@ngx-translate/core';
-import * as _ from 'lodash';
-import { AuthService } from '../../../auth.service';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Subject} from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
+import {AuthService} from '../../../auth.service';
 import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
-import { NavigationCancel,
-    Event,
-    NavigationEnd,
-    NavigationError,
-    NavigationStart,
-    Router } from '@angular/router';
-import { FuseConfigService } from '@fuse/services/config.service';
-import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
-
-import { navigation } from 'app/navigation/navigation';
+import {FuseConfigService} from '@fuse/services/config.service';
+import {FuseSidebarService} from '@fuse/components/sidebar/sidebar.service';
+import {NavigationCancel, Event, NavigationEnd, NavigationError, NavigationStart, Router} from '@angular/router';
+import * as _ from 'lodash';
+import {takeUntil} from 'rxjs/operators';
+import {navigation} from 'app/navigation/navigation';
 
 @Component({
     selector: 'toolbar',
@@ -46,8 +40,8 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
 
         this._router.events.subscribe((event: Event) => {
-        this.navigationInterceptor(event);
-    });
+            this.navigationInterceptor(event);
+        });
         // Set the defaults
         this.userStatusOptions = [
             {
@@ -95,6 +89,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
+
     private navigationInterceptor(event: Event): void {
         if (event instanceof NavigationStart) {
             this._loadingBar.start();
@@ -133,9 +128,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
-
-
-
 
 
 }
