@@ -24,6 +24,7 @@ export class AuthService {
         logged in and setting up null when logged out */
         this.afAuth.authState.subscribe(user => {
             if (user) {
+                console.log(user);
                 this.userData = user;
                 localStorage.setItem('user', JSON.stringify(this.userData));
                 JSON.parse(localStorage.getItem('user'));
