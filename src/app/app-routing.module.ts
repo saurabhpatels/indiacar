@@ -12,6 +12,8 @@ import {SampleComponent} from './main/sample/sample.component';
 import {MailConfirmComponent} from './main/mail-confirm/mail-confirm.component';
 import {RegisterComponent} from './main/register/register.component';
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
+import {ProfileComponent} from './main/profile/profile.component';
+
 
 
 const appRoutes: Routes = [
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
     {path: 'bookings', component: BookingsComponent, canActivate: [AuthGuard]},
     {path: 'drivers', component: DriversComponent, canActivate: [AuthGuard]},
     {path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
-    {path: 'sample', component: SampleComponent, canActivate: [AuthGuard]}
+    {path: 'sample', component: SampleComponent, canActivate: [AuthGuard]},
+    {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
 
 
 ];

@@ -55,6 +55,7 @@ export class AuthService {
     SignUp(email, password) {
         return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
             .then((result) => {
+                console.log(result.user);
                 /* Call the SendVerificaitonMail() function when new user sign
                 up and returns promise */
                 this.SendVerificationMail();
@@ -98,15 +99,18 @@ export class AuthService {
 
     // Sign in with Google
     GoogleAuth() {
-        return this.AuthLogin(new auth.GoogleAuthProvider());
+            return this.AuthLogin(new auth.GoogleAuthProvider());
     }
 
     // Auth logic to run auth providers
     AuthLogin(provider) {
         return this.afAuth.auth.signInWithPopup(provider)
             .then((result) => {
+                console.log(result.user);
                 this.ngZone.run(() => {
-                    this.toastr.success('Loging in', 'Please Wait');
+                    this.toastr.success('SuccessFully Logged In!', 'Welcome', {
+                        timeOut: 1000
+                    });
                     this.router.navigate(['sample']);
                 });
                 this.SetUserData(result.user);
@@ -125,7 +129,8 @@ export class AuthService {
             email: user.email,
             displayName: user.displayName,
             photoURL: user.photoURL,
-            emailVerified: user.emailVerified
+            emailVerified: user.emailVerified,
+
         };
         return userRef.set(userData, {
             merge: true

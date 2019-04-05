@@ -1,40 +1,43 @@
 DAILY WORK REPORT
 Name: Saurabh Patel
-Date: 04-04-2019
-StartTime: 10:00 AM
+Date: 05-04-2019
+StartTime: 10:23 AM
 LunchTime: 1:30 PM TO 2:15 PM
-EndTime: 08:30 PM
+EndTime: 07:25 PM
 
-#DemoAngular: [3H:30]
-[30M] - R&D On Dragabble&Dropable Module.
-[30M] - Design Elements
-[30M] - Solve Dragabble Element.
-[30M] - Import Angular2-Dragabble Module
-        -R&d On Lines.
-        -Draw Vectror Line On DragEnd Event
-[45M] - Imported Angular-SVg Module
-        -Created Postion Array And Push The Current Cordinates Of Dragabble Elements
-        -Performed Polylines
-[15M] -  Debug svg Module
-[30M] - Performed svg-Connectable js
-        -Created svg Groups
-        -Created nodes
-        -Inject Into Graph element
+#LearnAngular: [8H:00]
+[30M] - R&D On Firebase Storage.
+[30M] - Create a Storage Reference
+[30M] - Create a Reference
+[30M] - Navigate with References
+[30M] - Reference Properties
+[30M] - Limitations on References
 
-#LearnAngular: [4H:30]
-[1H] - ng-Connection-Service
-        -Monitor Connection Status
-        -Subscribe Connection Data To App
-        -Perform Events On Connnection State
+[1H] - Upload Files on Web
+       -Design Require Elements
+       -Import AngularFire Module
+       -Firebase Storage
 
-[30M] - Optional Route Parameteres
-[30M] - Relative Navigation
-[30M] - Paramap Observals
-[30M] - Ng Directives
-[30M] - PreLoad Modules
-[30M] - Refer Angular Doc
-[30M] - Angular Custom PreLoading Strategy
+[1H] - Upload Files
+       -AngularFireDatabaseModule
+       -Created FileStates Events
+       -Intilize Storageref Of firebase
+       -Perform Upload.put()
+       -Add File Metadata
 
+[1H ] - Manage Uploads
+        -Upload the file and metadata
+        -Pause the upload
+        -Resume the upload
+        -Cancel the upload
+
+[1H] - Monitor Upload Progress
+        -Running
+        -progress
+        -pause
+        -Perform Upload With Progress Monitoring
+[15M] -Solved Snapshot Error
+[15M] -Refer FireBase Guides
 
 
 
