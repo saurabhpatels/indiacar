@@ -14,6 +14,7 @@ import { locale as navigationEnglish } from 'app/navigation/i18n/en';
 import { locale as navigationTurkish } from 'app/navigation/i18n/tr';
 import {ToastrService} from 'ngx-toastr';
 import { ConnectionService } from 'ng-connection-service';
+import {AngularFireDatabase} from '@angular/fire/database';
 
 @Component({
     selector   : 'app',
@@ -42,7 +43,8 @@ export class AppComponent implements OnInit, OnDestroy
         private _translateService: TranslateService,
         private _platform: Platform,
         private _toast: ToastrService,
-        private connectionService: ConnectionService
+        private connectionService: ConnectionService,
+        private db: AngularFireDatabase
 
     )
     {

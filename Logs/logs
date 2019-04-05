@@ -39,3 +39,178 @@ EndTime: 08:30 PM
 
 
 
+Role Of Internet Of Thing In Home automation
+ID -919933
+    • Why the Internet of Things?
+
+IOT is so important because it finds a solution to every problem.
+The Internet has also made access to information and communication far easier. Rather than searching the library, users can access vast amounts of information from home computers.
+
+    • Abstract
+
+The Internet of Things (IoT) is the internetworking of physical devices, vehicles and other objects which consists of an embedded system with sensors, actuators and network connectivity that enable to collect and exchange data. The IoT allows objects to be sensed and/or controlled remotely across existing network infrastructure, creating opportunities for
+more integration of the physical world into computer-based systems, and result in improved accuracy, efficiency, and economic benefit. The IoT is a rapidly increasing a promising technology which becomes more and more present in our everyday lives.
+           Furthermore, the technology is an instance of the more general class of cyber-physical systems, which also encompasses technologies such as smart grids, smart homes, and smart cities. Considering the high-rate development of IoT technologies, and the significant increment in the number of the connected devices, comprehensive overview of the IoT system aims, architecture, challenges, applications, protocols, and market
+overview was discussed. In order to give an example of IoT solution, a simple IoT demonstrator was implemented using the current affordable hardware, and cloud efficient software. With this demonstrator, the simplicity and design flexibility of IoT solution was highlighted and two of the IBM IoT software, Node-RED, and Bluemix, were examined.
+
+           We’re entering a new era of computing technology that many are calling the Internet of Things (IoT). Machine to machine, machine to infrastructure, machine to an environment, the Internet of Everything, the Internet of Intelligent Things, intelligent systems—call it what you want, but it’s happening, and its potential is huge. We see the IoT as billions of smart, connected “things” (a sort of “universal global neural network” in the cloud) that will encompass every aspect of our lives, and its foundation is the intelligence that embedded processing provides. The IoT is comprised of smart machines interacting and communicating with other machines, objects, environments, and infrastructures. As a result, huge volumes of data are being generated, and that data is being processed into useful actions that can “command and control” things to make our lives much easier and safer—and to reduce our impact on the environment. The creativity of this new era is boundless, with amazing potential to improve our lives. The following thesis is an extensive reference to the possibilities, utility, applications and the evolution of the Internet of Things.
+
+    • Introduction
+
+The Internet of Things (IoT) is the network of physical objects—devices, vehicles, buildings, and other items—embedded with electronics, software, sensors, and network connectivity that enables these objects to collect and exchange data. The IoT allows objects to be sensed and controlled remotely across existing network infrastructure, creating opportunities for more direct integration of the physical world into computer-based systems, and resulting in improved efficiency, accuracy and economic benefit; when IoT is augmented with sensors and actuators, the technology becomes an instance of the more general class of cyber-physical systems, which also encompasses technologies such as smart grids, smart homes, intelligent transportation, and smart cities. Each thing is uniquely identifiable through its embedded computing system but is able to interoperate within the existing Internet infrastructure. Experts estimate that the IoT will consist of almost 50 billion objects by 2020.
+
+    • Overview
+
+According to Gartner, Inc. (technology research and advisory corporation), there will be nearly 26 billion devices on the Internet of Things by 2020. ABI Research estimates that more than 30 billion devices will be wirelessly connected to the Internet of Things by 2020. As per a recent survey and study were done by Pew Research Internet Project, a large majority of the technology experts and engaged Internet users who responded—83 percent—agreed with the notion that the Internet/Cloud of
+Things, embedded and wearable computing (and the corresponding dynamic systems[40]) will have widespread and beneficial effects by 2025. As such, it is clear that the IoT will consist of a very large number of devices being connected to the Internet. In an active move to accommodate new and emerging technological innovation, the UK Government, in their 2015 budget, allocated £40,000,000 towards research into the Internet of Things. The British Chancellor of the Exchequer George Osborne posited that the Internet of Things is the next stage of the information revolution and referenced the inter-connectivity of everything from urban transport to
+medical devices to household appliances.
+
+
+Environmental monitoring:-
+
+Environmental monitoring applications of the IoT typically use sensors to assist in environmental protection by monitoring air or water quality, atmospheric or soil conditions, and can even include areas like monitoring the movements of wildlife and their habitats
+Infrastructure management:-
+
+Monitoring and controlling operations of urban and rural infrastructures like bridges, railway tracks, on- and offshore- wind-farms is a key application of the IoT.[66] The IoT infrastructure can be used for monitoring any events or changes in structural conditions that can compromise safety and increase risk.
+
+Manufacturing:-
+
+Network control and management of manufacturing equipment, asset and situation management, or manufacturing process control bring the IoT within the realm on industrial applications and smart manufacturing as well.
+
+ Energy management:-
+
+Integration of sensing and actuation systems, connected to the Internet, is likely to optimize energy consumption as a whole.[49] It is expected that IoT devices will be integrated into all forms of energy consuming devices (switches, power outlets, bulbs, televisions, etc.) and be able to communicate with the utility supply company in order to effectively balance power generation and energy usage.
+
+ Medical and healthcare systems:-
+
+IoT devices can be used to enable remote health monitoring and emergency notification systems. These health monitoring devices can range from blood pressure and heart rate monitors to advanced devices capable of monitoring specialized implants, such as pacemakers or advanced hearing aids.
+
+
+
+
+Building and home automation:-
+
+IoT devices can be used to monitor and control the mechanical, electrical and electronics systems used in various types of buildings (e.g., public and private, industrial, institutions, or residential)[49] in home automation and building automation systems.
+
+ Transportation:-
+
+The IoT can assist in the integration of communications, control, and information processing across various transportation systems.
+
+Large Scale Deployments:-
+
+There are cities where are almost complete smart cities with a wide range of using IoT and covering wireless.
+
+    • Architecture
+
+ARCHITECTURE OF INTERNET OF THINGS
+
+The architecture of internet Of Things contains basically 4 layers:
+
+1. Application Layer
+2. Gateway and the network layer
+3. Management Service Layer
+4. Sensor Layer
+
+
+    1. APPLICATION LAYER:
+
+Lowest Abstraction Layer With sensors we are creating a digital nervous system. Incorporated to measure physical quantities Interconnects the physical and digital world Collects and processes the real-time information
+
+    2. GATEWAY AND THE NETWORK LAYER:
+
+Robust and High-performance network infrastructure Supports the communication requirements for latency, bandwidth or security
+Allows multiple organizations to share and use the same network independently
+
+    3. MANAGEMENT LAYER:
+
+Capturing of periodic sensory data Data Analytics (Extracts relevant information from a massive amount of raw data) Streaming Analytics (Process real-time data) Ensures security and privacy of data.
+
+4.SENSOR LAYER:
+
+Provides a user interface for using IoT. Different applications for various sectors like Transportation, Healthcare, Agriculture, Supply chains, Government, Retail, etc.
+
+
+
+
+
+
+    • IOT Hardware
+
+The most important hardware in IoT might be its sensors. These devices consist of energy modules, power management modules, RF modules, and sensing modules.RF modules manage communications through their signal processing, WiFi, ZigBee, Bluetooth, radio transceiver, duplexer, and BAW.
+
+1.	accelerometers Type: temperature sensors
+2.	magnetometers Type:	proximity sensors
+3.	gyroscopes Type:	image sensors
+4.	acoustic sensors Type:	light sensors
+5.	pressure sensors Type:	gas RFID sensors
+6.	humidity sensors Type:	micro flow sensors
+
+
+Wearable Devices:-
+
+Wearable electronic devices are small devices worn on the head, neck, arms, torso, and feet. Smartwatches not only help us stay connected but as a part of an IoT system, they allow access needed for improved productivity.
+
+
+Current smart wearable devices include −
+Head − Helmets, glasses
+Neck − Jewelry, Collars
+Arm − Watches, wristbands, rings
+Torso − Clothing, backpacks
+Feet − Socks, shoes
+
+
+Standard Devices:-
+The desktop, tablet, and cellphone remain integral parts of IoT as the command center and remotes. The desktop provides the user with the highest level of control over the system and its settings. The tablet provides access to the key features of the system in a way resembling the desktop, and also acts as a remote. The cellphone allows some essential settings modification and also provides remote functionality. Other key connected devices include standard network devices like routers and switches.
+
+    • IOT Software
+IoT software addresses its key areas of networking and action through platforms, embedded systems, partner systems, and middleware. These individual and master applications are responsible for data collection, device integration, real-time analytics, and application and process extension within the IoT network. They exploit integration with critical business systems (e.g., ordering systems, robotics, scheduling, and more) in the execution of related tasks.
+
+Data Collection:-
+This software manages sensing, measurements, light data filtering, light data security, and aggregation of data. It uses certain protocols to aid sensors in connecting with real-time, machine-to-machine networks. Then it collects data from multiple devices and distributes it in accordance with settings. It also works in reverse by distributing data over devices. The system eventually transmits all collected data to a central server.
+
+Device Integration:-
+Software supporting integration binds (dependent relationships) all system devices to create the body of the IoT system. It ensures the necessary cooperation and stable networking between devices. These applications are the defining software technology of the IoT network because, without them, it is not an IoT system. They manage the various applications, protocols, and limitations of each device to allow communication.
+
+Real-Time Analytics:-
+These applications take data or input from various devices and convert it into viable actions or clear patterns for human analysis. They analyze information based on various settings and designs in order to perform automation-related tasks or provide the data required by industry.
+
+Application and Process Extension:-
+These applications extend the reach of existing systems and software to allow a wider, more effective system. They integrate predefined devices for specific purposes such as allowing certain mobile devices or engineering instruments access. It supports improved productivity and more accurate data collection.
+    • IOT Technology & Protocols
+IoT primarily exploits standard protocols and networking technologies. However, the major enabling technologies and protocols of IoT are RFID,
+ 	NFC, low-energy Bluetooth, low-energy wireless, low-energy radio protocols, LTE-A, and WiFi-Direct. These technologies support the specific networking functionality needed in an IoT system in contrast to a standard uniform network of common systems.
+
+NFC and RFID:-
+RFID (radio-frequency identification) and NFC (near-field communication) provide simple, low-energy, and versatile options for identity and access tokens, connection bootstrapping, and payments.
+RFID technology employs 2-way radio transmitter-receivers to identify and track tags associated with objects.
+NFC consists of communication protocols for electronic devices, typically a mobile device and a standard device.
+
+Low-Energy Bluetooth:-
+This technology supports the low-power, long-use need for IoT function while exploiting a standard technology with native support across systems.
+
+Low-Energy Wireless:-
+This technology replaces the most power hungry aspect of an IoT system. Though sensors and other elements can power down over long periods, communication links (i.e., wireless) must remain in listening mode. Low-energy wireless not only reduces consumption but also extends the life of the device through less use.
+
+
+
+
+
+Radio Protocols:-
+ZigBee, Z-Wave, and Thread are radio protocols for creating low-rate private area networks. These technologies are low-power, but offer high throughput, unlike many similar options. This increases the power of small local device networks without the typical costs.
+
+LTE-A:-
+LTE-A, or LTE Advanced, delivers an important upgrade to LTE technology by increasing not only its coverage but also reducing its latency and raising its throughput. It gives IoT a tremendous power through expanding its range, with its most significant applications being the vehicle, UAV, and similar communication.
+
+WiFi-Direct:-
+WiFi-Direct eliminates the need for an access point. It allows P2P (peer-to-peer) connections with the speed of WiFi, but with lower latency.
+WiFi-Direct eliminates an element of a network that often bogs it down, and it does not compromise on speed or throughput.
+
+    • How does it work?
+Devices and objects with built-in sensors are connected to an Internet of Things platform, which integrates data from the different devices and applies analytics to share the most valuable information with applications built to address specific needs. These powerful IoT platforms can pinpoint exactly what information is useful and what can safely be ignored. This information can be used to detect patterns, make recommendations, and detect possible problems before they occur.
+
+For example, if I own a car manufacturing business, I might want to know which optional components (leather seats or alloy wheels, for example) are the most popular. Using Internet of Things technology, I can: Use sensors to detect which areas in a showroom are the most popular, and where customers linger longest; Drill down into the available sales data to identify which components are selling fastest; Automatically align sales data with supply, so that popular items don’t go out of stock. The information picked up by connected devices enables me to make smart decisions about which components to stock up on, based on real-time information, which helps me save time and money. With the insight provided by advanced analytics comes the power to make processes more efficient. Smart objects and systems mean you can automate certain tasks, particularly when these are repetitive, mundane, time-consuming or even dangerous. Let’s look at some examples to see what this looks like in real life.
+    • Scenario
+Scenario #1:
+IoT in your home Imagine you wake up at 7 am every day to go to work. Your alarm clock does the job of waking you just fine. That is until something goes wrong. Your train’s canceled and you have to drive to work instead. The only problem is that it takes longer to drive, and you would have needed to get up at 6.45am to avoid being late. Oh, and it’s pouring with rain, so you’ll need to drive slower than usual. A connected or IoT-enabled alarm clock would reset itself based on all these factors, to ensure you got to work on time. It could recognize that your usual train is canceled, calculate the driving distance and travel time for your alternative route to work, check the weather and factor in slower traveling speed because of heavy rain, and calculate when it needs to wake you up so you’re not late. If it’s super-smart if might even sync with your IoT-enabled coffee maker, to ensure your morning caffeine’s ready to go when you get up.
+Scenario #2:
+IoT in transport having been woken by your smart alarm, you’re now driving to work. On comes the engine light. You’d rather not head straight to the garage, but what if it’s something urgent? In a connected car, the sensor that triggered the check engine light would communicate with others in the car. A component called the diagnostic bus collects data from these sensors and passes it to a gateway in the car, which sends the most relevant information to the manufacturer’s platform. The manufacturer can use data from the car to offer you an appointment to get the part fixed, send you directions to the nearest dealer, and make sure the correct replacement part is ordered so it’s ready for you when you show up.

@@ -18,9 +18,12 @@ import {DriversModule} from './main/drivers/drivers.module';
 import {BookingsModule} from './main/bookings/bookings.module';
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import {LoginModule} from './main/login/login.module';
-import {AngularFireModule} from '@angular/fire';
+import { AngularFireModule } from 'angularfire2';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFireAuthModule} from '@angular/fire/auth';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
+
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 import {environment} from '../environments/environment';
 import {ForgotPasswordModule} from './main/forgot-password/forgot-password.module';
 import {AuthService} from './auth.service';
@@ -29,6 +32,11 @@ import {MailConfirmModule} from './main/mail-confirm/mail-confirm.module';
 import {AppRoutingModule} from './app-routing.module';
 import {ToastrModule} from 'ngx-toastr';
 import {ReactiveFormsModule} from '@angular/forms';
+import {StoreModule} from '@ngrx/store';
+import {ProfileModule} from './main/profile/profile.module';
+
+
+
 
 @NgModule({
     declarations: [AppComponent],
@@ -64,10 +72,17 @@ import {ReactiveFormsModule} from '@angular/forms';
         MailConfirmModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        ToastrModule.forRoot({positionClass: 'toast-top-center', preventDuplicates: true, timeOut: 1500}),
+        ToastrModule.forRoot({positionClass: 'toast-top-center', progressBar: false, preventDuplicates: true, timeOut: 1000}),
         ReactiveFormsModule,
-        HttpClientModule
-    ],
+        HttpClientModule,
+        StoreModule.forRoot({}),
+        AngularFireDatabaseModule,
+        AngularFireStorageModule,
+        ProfileModule
+
+
+
+    ], exports: [MatIconModule],
     providers: [AuthService],
     bootstrap: [AppComponent]
 })

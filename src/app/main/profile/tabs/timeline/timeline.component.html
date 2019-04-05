@@ -1,0 +1,81 @@
+<div id="timeline" class="p-24" fxLayout="row wrap">
+
+    <div class="timeline-content" fxLayout="column" fxFlex="100" fxFlex.gt-sm="55" fxFlex.gt-md="65">
+        <!-------Upload Photos-------------->
+        <div class="profile-box add-post">
+
+            <div class="form" fxFlex>
+
+                <textarea placeholder="Write something.."></textarea>
+
+                <footer fxLayout="row" fxLayoutAlign="space-between center" >
+
+                    <div fxLayout="row" fxLayoutAlign="start center">
+                        <input type="file" (change)="onFileSelected($event)">
+                        <button mat-icon-button aria-label="Add photo" (click)="onUpload()" matTooltip="Add Photo">
+
+                            <mat-icon>photo</mat-icon>
+                        </button>
+
+                        <button mat-icon-button aria-label="Mention somebody" matTooltip="Mention somebody">
+                            <mat-icon>person</mat-icon>
+                        </button>
+
+                        <button mat-icon-button aria-label="Add location" matTooltip="Add location">
+                            <mat-icon>location_on</mat-icon>
+                        </button>
+
+                    </div>
+
+                    <button mat-raised-button color="accent" class="post-button" aria-label="POST">POST</button>
+
+                </footer>
+
+            </div>
+
+        </div>
+        <!-------Upload Photos-------------->
+        <mat-divider></mat-divider>
+
+        <div class="timeline-item" *ngIf="authService.userData as user">
+
+            <header fxLayout="row" fxLayoutAlign="space-between start">
+                <div class="user" fxLayout="row" fxLayoutAlign="start center">
+                    <img class="avatar" src="{{user.photoURL? user.photoURL: '/assets/dummy-user.png'}}">
+
+                    <div fxLayout="column">
+                       <div class="title">
+                            <span class="username">{{user.displayName}}</span>
+                           <!-- <span *ngIf="post.type === 'post'">posted on your timeline</span>
+                            <span *ngIf="post.type === 'something'">shared something with you</span>
+                            <span *ngIf="post.type === 'video'">shared a video with you</span>
+                            <span *ngIf="post.type === 'article'">shared an article with you</span> -->
+                        </div>
+                        <div class="time">32 Minutes Ago</div>
+                    </div>
+                </div>
+
+                <button mat-icon-button aria-label="More">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+            </header>
+
+            <div class="content">
+                <div *ngIf="user.displayName" class="message">
+                    Remember the place we were talking about the other night? Found it!
+                </div>
+
+                <div *ngIf="user.photoURL" class="media">
+                    <img src="{{user.photoURL? user.photoURL: '/assets/dummy-user.png'}}">
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+

@@ -35,6 +35,14 @@ export const navigation: FuseNavigation[] = [
                 icon     : 'bookmarks',
                 url      : '/bookings',
             },
+            {
+                id       : 'profile',
+                title    : 'Upload',
+                type     : 'item',
+                icon     : 'bookmarks',
+                url      : '/profile',
+            }
+
 
 
 

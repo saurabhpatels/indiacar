@@ -11,18 +11,18 @@
             <div class="h1 mt-16">Users</div>
         </div>
     </div>
-    <!-- HEADER -->
 
     <!--Spinner -->
-    <div *ngIf="loader" class="my-spin-one">
-        <mat-spinner [diameter]="60" class="cus-spinner" color="accent" strokeWidth="5">
-        </mat-spinner>
-    </div>
+
     <!---Spinner--->
 
     <!---------------Content---------------------------->
     <div class="content p-24">
+
         <div fxLayout="row" fxLayoutAlign="space-between center">
+            <!-- HEADER -->
+
+
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
                 <!--- Note that these columns can be defined in any order.
