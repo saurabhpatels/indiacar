@@ -8,13 +8,14 @@ import { ProfileService } from './profile.service';
 import {ProfileTimelineComponent} from './tabs/timeline/timeline.component';
 import {ProfileComponent} from './profile.component';
 import {ProfilePhotosVideosComponent} from './tabs/photos-videos/photos-videos.component';
+import {FileSizePipe} from '../../file-size.pipe';
 
 
 
 
 
 @NgModule({
-    declarations: [
+    declarations: [FileSizePipe,
         ProfileComponent,
         ProfileTimelineComponent,
         ProfilePhotosVideosComponent

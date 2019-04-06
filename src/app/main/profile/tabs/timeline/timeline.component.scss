@@ -259,3 +259,27 @@ profile-timeline {
         }
     }
 }
+
+.attachment-list {
+    font-size: 13px;
+
+    .attachment, #progressbar {
+        border: 1px solid;
+        border-radius: 20px;
+        padding-left: 16px;
+        margin-top: auto;
+        height: auto;
+
+        .filename {
+            font-weight: 600;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+progress{
+    background-color: #2AA198;
+}

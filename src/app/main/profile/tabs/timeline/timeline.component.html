@@ -6,31 +6,80 @@
 
             <div class="form" fxFlex>
 
-                <textarea placeholder="Write something.."></textarea>
+                <div id="myProgress">
+                    <div id="myBar"></div>
+                </div>
 
+                      <textarea placeholder="Write something..">
+
+                </textarea>
+
+
+
+
+                <div class="ldBar" data-value="50"></div>
                 <footer fxLayout="row" fxLayoutAlign="space-between center" >
 
                     <div fxLayout="row" fxLayoutAlign="start center">
-                        <input type="file" (change)="onFileSelected($event)">
-                        <button mat-icon-button aria-label="Add photo" (click)="onUpload()" matTooltip="Add Photo">
 
-                            <mat-icon>photo</mat-icon>
-                        </button>
 
-                        <button mat-icon-button aria-label="Mention somebody" matTooltip="Mention somebody">
-                            <mat-icon>person</mat-icon>
-                        </button>
+                        <input type="file" style="display: none" (change)="startUpload($event.target.files)" #fileinput>
 
-                        <button mat-icon-button aria-label="Add location" matTooltip="Add location">
-                            <mat-icon>location_on</mat-icon>
-                        </button>
+                            <button mat-icon-button aria-label="Add photo" (click)="fileinput.click()" matTooltip="Add Photo">
+                                <mat-icon>photo</mat-icon>
+                            </button>
+
+                        <div class="attachment-list" *ngIf="snapshot | async as snap">
+
+                            <div class="attachment" fxLayout="row" fxLayoutAlign="space-between center">
+
+                                <div>
+                                    <span class="filename">attachment-2.doc</span>
+                                    <span class="size ml-4">(12 Kb)</span>
+                                </div>
+
+                                <button mat-icon-button (click)="task.resume()" [disabled]="!(snap?.state === 'paused')" >
+                                    <mat-icon>play_arrow</mat-icon>
+                                </button>
+
+                                <button mat-icon-button (click)="task.pause()" [disabled]="!isActive(snap)">
+                                    <mat-icon>pause</mat-icon>
+                                </button>
+
+                                <button mat-icon-button (click)="task.cancel()" [disabled]="!isActive(snap)" >
+                                    <mat-icon color="warn">cancel</mat-icon>
+                                </button>
+
+                            </div>
+
+
+
+
+                        </div>
+
+                        <div *ngIf="percentage | async as pct">
+
+                            <progress class="progress is-info" [value]="pct" max="100"></progress>
+
+                            {{ pct | number }}%
+
+                        </div>
+
+
+
+
+
+                        <!--  Progress bar -->
+
+                        <!--  Progress bar -->
 
                     </div>
 
-                    <button mat-raised-button color="accent" class="post-button" aria-label="POST">POST</button>
 
                 </footer>
-
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
             </div>
 
         </div>
@@ -62,11 +111,11 @@
 
             <div class="content">
                 <div *ngIf="user.displayName" class="message">
-                    Remember the place we were talking about the other night? Found it!
+                    Remember the place we were talking about the other night? Found <i></i>t!
                 </div>
 
-                <div *ngIf="user.photoURL" class="media">
-                    <img src="{{user.photoURL? user.photoURL: '/assets/dummy-user.png'}}">
+                <div *ngIf="downloadURL  as url" class="media">
+                    <img src="{{url? url: '/assets/dummy-user.png'}}">
 
                 </div>
 
