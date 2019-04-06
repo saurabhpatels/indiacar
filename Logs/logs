@@ -3,42 +3,30 @@ Name: Saurabh Patel
 Date: 05-04-2019
 StartTime: 10:23 AM
 LunchTime: 1:30 PM TO 2:15 PM
-EndTime: 07:25 PM
+EndTime: 07:15 PM
 
 #LearnAngular: [8H:00]
-[30M] - R&D On Firebase Storage.
-[30M] - Create a Storage Reference
-[30M] - Create a Reference
-[30M] - Navigate with References
-[30M] - Reference Properties
-[30M] - Limitations on References
+[1H ] - Refer Firebase Console Doc
+[30M] - Created Ui For Uplaods File.
+[30M] - Performed Snapshot Method.
+[30M] - Solved DownloadUrl Callback Issue
+[30M] - Create a Reference For Download
+[30M] - Design TimelineUi For Photos
+[30M] - Design Progressbar & Pause Resume & cancel States Animations
+[1H ] - Listen for state changes, errors, and completion of the upload.
+        -Fetched firebase storage TaskEvent STATE_CHANGED
+        -Error Code
+        -Inspect Error ServerResponse
 
-[1H] - Upload Files on Web
-       -Design Require Elements
-       -Import AngularFire Module
-       -Firebase Storage
 
-[1H] - Upload Files
-       -AngularFireDatabaseModule
-       -Created FileStates Events
-       -Intilize Storageref Of firebase
-       -Perform Upload.put()
-       -Add File Metadata
-
-[1H ] - Manage Uploads
-        -Upload the file and metadata
-        -Pause the upload
-        -Resume the upload
-        -Cancel the upload
-
-[1H] - Monitor Upload Progress
-        -Running
-        -progress
-        -pause
-        -Perform Upload With Progress Monitoring
-[15M] -Solved Snapshot Error
-[15M] -Refer FireBase Guides
-
+[1H ] - Solving Multiple Fire Storage Refrence file Url issues
+        -Images Replaced With Previous image.
+[30M] - Solved Angularfire2 Module issue
+[30M] - solved Repeating url Stored in FireStorage
+[1H] -  FileMetadata
+        -Get Metadata
+        -Update Metadata
+        -Custome Metadata
 
 
 

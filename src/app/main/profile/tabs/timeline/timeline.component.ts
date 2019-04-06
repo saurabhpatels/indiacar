@@ -8,7 +8,7 @@ import {AuthService} from '../../../../auth.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { tap } from 'rxjs/operators';
 import * as firebase from 'firebase';
-import {computeMsgId} from '@angular/compiler/src/i18n/digest';
+
 
 
 @Component({
