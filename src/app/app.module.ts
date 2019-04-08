@@ -18,12 +18,9 @@ import {DriversModule} from './main/drivers/drivers.module';
 import {BookingsModule} from './main/bookings/bookings.module';
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import {LoginModule} from './main/login/login.module';
-import {AngularFireModule} from 'angularfire2';
+
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFireAuthModule} from '@angular/fire/auth';
-
-import {AngularFirestoreModule} from 'angularfire2/firestore';
-import {AngularFireStorageModule} from 'angularfire2/storage';
 import {environment} from '../environments/environment';
 import {ForgotPasswordModule} from './main/forgot-password/forgot-password.module';
 import {AuthService} from './auth.service';
@@ -34,6 +31,9 @@ import {ToastrModule} from 'ngx-toastr';
 import {ReactiveFormsModule} from '@angular/forms';
 import {StoreModule} from '@ngrx/store';
 import {ProfileModule} from './main/profile/profile.module';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 
 
 

@@ -5,118 +5,83 @@
         <div class="profile-box add-post">
 
             <div class="form" fxFlex>
-
-                <div id="myProgress">
-                    <div id="myBar"></div>
-                </div>
-
-                      <textarea placeholder="Write something..">
+                <textarea type="text" class="form-control" [(ngModel)]="photobio">
 
                 </textarea>
-
-
-
-
-                <div class="ldBar" data-value="50"></div>
-                <footer fxLayout="row" fxLayoutAlign="space-between center" >
-
+                <footer fxLayout="row" fxLayoutAlign="space-between center">
                     <div fxLayout="row" fxLayoutAlign="start center">
-
-
-                        <input type="file" style="display: none" (change)="startUpload($event.target.files)" #fileinput>
-
-                            <button mat-icon-button aria-label="Add photo" (click)="fileinput.click()" matTooltip="Add Photo">
-                                <mat-icon>photo</mat-icon>
-                            </button>
-
-                        <div class="attachment-list" *ngIf="snapshot | async as snap">
-
+                        <input type="file" style="display: none" (change)="startUpload($event.target.files , photobio)"
+                               #fileinput>
+                        <button [disabled]="photobio == null" mat-icon-button aria-label="Add photo"
+                                (click)="fileinput.click()" matTooltip="Add Photo">
+                            <mat-icon>photo</mat-icon>
+                        </button>
+                        <div class="attachment-list" *ngIf="uploadState | async; let state">
                             <div class="attachment" fxLayout="row" fxLayoutAlign="space-between center">
-
-                                <div>
-                                    <span class="filename">attachment-2.doc</span>
-                                    <span class="size ml-4">(12 Kb)</span>
+                                <div *ngIf="snapshot | async as snap">
+                                    <span class="filename">{{filename}}...</span>
+                                    <span class="size ml-4"> {{ snap.bytesTransferred | fileSize }}</span>
                                 </div>
-
-                                <button mat-icon-button (click)="task.resume()" [disabled]="!(snap?.state === 'paused')" >
-                                    <mat-icon>play_arrow</mat-icon>
-                                </button>
-
-                                <button mat-icon-button (click)="task.pause()" [disabled]="!isActive(snap)">
-                                    <mat-icon>pause</mat-icon>
-                                </button>
-
-                                <button mat-icon-button (click)="task.cancel()" [disabled]="!isActive(snap)" >
-                                    <mat-icon color="warn">cancel</mat-icon>
-                                </button>
-
+                                <div *ngIf="uploadState | async; let state">
+                                    <button mat-icon-button (click)="task.resume()" [disabled]="state === 'running'">
+                                        <mat-icon>play_arrow</mat-icon>
+                                    </button>
+                                    <button mat-icon-button (click)="task.pause()" [disabled]="state === 'paused'">
+                                        <mat-icon>pause</mat-icon>
+                                    </button>
+                                    <button mat-icon-button (click)="task.cancel()"
+                                            [disabled]="!(state === 'paused' || state === 'running')">
+                                        <mat-icon color="warn">cancel</mat-icon>
+                                    </button>
+                                </div>
                             </div>
-
-
-
-
                         </div>
+                    </div>
 
-                        <div *ngIf="percentage | async as pct">
+                    <div *ngIf="uploadProgress | async as pct">
 
-                            <progress class="progress is-info" [value]="pct" max="100"></progress>
-
-                            {{ pct | number }}%
-
-                        </div>
-
-
-
-
-
-                        <!--  Progress bar -->
-
-                        <!--  Progress bar -->
-
+                        <mat-progress-bar class="example-margin" color="accent" style="background-color: aliceblue"
+                                          mode="determine" [value]="pct"></mat-progress-bar>
                     </div>
 
 
+                    <input #passurl [value]="(downloadURL | async)" type="hidden"/>
+                    <button mat-raised-button class="post-button" (click)="save(passurl.value)" color="accent"
+                            aria-label="POST">Save
+                    </button>
+
                 </footer>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+
             </div>
 
         </div>
-        <!-------Upload Photos-------------->
+
         <mat-divider></mat-divider>
 
-        <div class="timeline-item" *ngIf="authService.userData as user">
+        <div class="timeline-item" *ngFor="let item of items | async">
 
-            <header fxLayout="row" fxLayoutAlign="space-between start">
+            <header fxLayout="row" fxLayoutAlign="space-between start" *ngIf="authService.userData as user">
                 <div class="user" fxLayout="row" fxLayoutAlign="start center">
                     <img class="avatar" src="{{user.photoURL? user.photoURL: '/assets/dummy-user.png'}}">
 
                     <div fxLayout="column">
-                       <div class="title">
+                        <div class="title">
                             <span class="username">{{user.displayName}}</span>
-                           <!-- <span *ngIf="post.type === 'post'">posted on your timeline</span>
-                            <span *ngIf="post.type === 'something'">shared something with you</span>
-                            <span *ngIf="post.type === 'video'">shared a video with you</span>
-                            <span *ngIf="post.type === 'article'">shared an article with you</span> -->
                         </div>
                         <div class="time">32 Minutes Ago</div>
                     </div>
                 </div>
 
-                <button mat-icon-button aria-label="More">
-                    <mat-icon>more_vert</mat-icon>
+                <button mat-icon-button aria-label="Delete" (click)="deleteItem(item.key ,item.url)">
+                    <mat-icon color="warn">delete</mat-icon>
                 </button>
             </header>
 
             <div class="content">
-                <div *ngIf="user.displayName" class="message">
-                    Remember the place we were talking about the other night? Found <i></i>t!
-                </div>
 
-                <div *ngIf="downloadURL  as url" class="media">
-                    <img src="{{url? url: '/assets/dummy-user.png'}}">
 
+                <div class="media">
+                    <img src="{{item.url }}">
                 </div>
 
 
