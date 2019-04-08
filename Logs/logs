@@ -1,30 +1,34 @@
 DAILY WORK REPORT
 Name: Saurabh Patel
-Date: 05-04-2019
-StartTime: 10:23 AM
+Date: 08-04-2019
+StartTime: 9:50 AM
 LunchTime: 1:30 PM TO 2:15 PM
-EndTime: 07:15 PM
+EndTime: 07:10 PM
 
 #LearnAngular: [8H:00]
-[1H ] - Refer Firebase Console Doc
-[30M] - Created Ui For Uplaods File.
-[30M] - Performed Snapshot Method.
-[30M] - Solved DownloadUrl Callback Issue
-[30M] - Create a Reference For Download
-[30M] - Design TimelineUi For Photos
-[30M] - Design Progressbar & Pause Resume & cancel States Animations
-[1H ] - Listen for state changes, errors, and completion of the upload.
-        -Fetched firebase storage TaskEvent STATE_CHANGED
-        -Error Code
-        -Inspect Error ServerResponse
-[1H ] - Solving Multiple Fire Storage Refrence file Url issues
-        -Images Replaced With Previous image.
-[30M] - Solved Angularfire2 Module issue
-[30M] - solved Repeating url Stored in FireStorage
-[1H] -  FileMetadata
-        -Get Metadata
-        -Update Metadata
-        -Custome Metadata
+[1H ] - Refer Angular fire Npm Doc
+        -Upload Files
+        -Cloud FireStore
+[1H ] - Observable
+        -RXjs
+        -Angular
+        -Firebase
+[30M] -Realtime bindings
+[30M] -Synchronize data in realtime.
+[30M] -AngularFirestoreCollection
+
+[30M] - Sync Realtime File Upload State.
+[30M] - Bind Realtime Task to Files.
+[30M] - Created sync Upload Files In Storage
+[30M] - Sync Files's Metadata,DownloadUrl,& Content
+[1H ] - Solve Issue of url sync [npm package moved from fire2 to fire]
+[1H ] - Attach Observable For Realtime sync
+        -UploadProgress
+        -UploadState
+        -DownloadURL
+        -Files
+[30M] - Sync Both (Storage & Realtime Database) Resource For Adding & Removing Files & Its Metadata
+
 
 
 
