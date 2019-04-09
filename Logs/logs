@@ -16,7 +16,6 @@ EndTime: 07:10 PM
 [30M] -Realtime bindings
 [30M] -Synchronize data in realtime.
 [30M] -AngularFirestoreCollection
-
 [30M] - Sync Realtime File Upload State.
 [30M] - Bind Realtime Task to Files.
 [30M] - Created sync Upload Files In Storage
@@ -30,5 +29,6 @@ EndTime: 07:10 PM
 [30M] - Sync Both (Storage & Realtime Database) Resource For Adding & Removing Files & Its Metadata
 
 
-
+#Tommorow's Task: [09/04/2019]
+-Continue To Learning Angular
 

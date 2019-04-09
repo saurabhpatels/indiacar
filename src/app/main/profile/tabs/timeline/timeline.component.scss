@@ -259,16 +259,14 @@ profile-timeline {
         }
     }
 }
-
 .attachment-list {
     font-size: 13px;
 
-    .attachment, #progressbar {
+    .attachment {
         border: 1px solid;
         border-radius: 20px;
         padding-left: 16px;
-        margin-top: auto;
-        height: auto;
+        margin-top: 8px;
 
         .filename {
             font-weight: 600;
@@ -279,7 +277,6 @@ profile-timeline {
         }
     }
 }
-
 .example-margin {
     border-radius: 14px !important;
     alignment: center !important;

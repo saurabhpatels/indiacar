@@ -8,8 +8,8 @@ import {ProfilePhotosVideosComponent} from './tabs/photos-videos/photos-videos.c
 import {FileSizePipe} from '../../file-size.pipe';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule} from '@angular/fire/storage';
-
-
+import {ToastrModule} from 'ngx-toastr';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 
 
@@ -18,7 +18,8 @@ import { AngularFireStorageModule} from '@angular/fire/storage';
     declarations: [FileSizePipe,
         ProfileComponent,
         ProfileTimelineComponent,
-        ProfilePhotosVideosComponent
+        ProfilePhotosVideosComponent,
+        TimeAgoPipe
     ],
     imports     : [
         MatButtonModule,
@@ -28,7 +29,8 @@ import { AngularFireStorageModule} from '@angular/fire/storage';
         FuseSharedModule,
         AngularFireModule,
         AngularFireStorageModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        ToastrModule
     ],
     providers   : [
         ProfileService,

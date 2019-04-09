@@ -1,64 +1,68 @@
 <div id="timeline" class="p-24" fxLayout="row wrap">
 
     <div class="timeline-content" fxLayout="column" fxFlex="100" fxFlex.gt-sm="55" fxFlex.gt-md="65">
-        <!-------Upload Photos-------------->
+
+        <!---------PHOTOUPLOAD & SAVE & PROGRESSBAR ----------->
         <div class="profile-box add-post">
-
             <div class="form" fxFlex>
-                <textarea type="text" class="form-control" [(ngModel)]="photobio">
 
-                </textarea>
+                <textarea type="text" class="form-control" placeholder="Write About Photo" [(ngModel)]="dataservice.photobio"></textarea>
+
                 <footer fxLayout="row" fxLayoutAlign="space-between center">
+
                     <div fxLayout="row" fxLayoutAlign="start center">
-                        <input type="file" style="display: none" (change)="startUpload($event.target.files , photobio)"
-                               #fileinput>
-                        <button [disabled]="photobio == null" mat-icon-button aria-label="Add photo"
-                                (click)="fileinput.click()" matTooltip="Add Photo">
+
+                        <input type="file" style="display: none" (change)="dataservice.uploadPhoto($event.target.files , dataservice.photobio)" #fileinput>
+
+                        <button [disabled]="dataservice.photobio == null" mat-icon-button aria-label="Add photo" (click)="fileinput.click()" matTooltip="Add Photo">
                             <mat-icon>photo</mat-icon>
                         </button>
-                        <div class="attachment-list" *ngIf="uploadState | async; let state">
+
+                        <div class="attachment-list" *ngIf="dataservice.uploadState | async; let state">
                             <div class="attachment" fxLayout="row" fxLayoutAlign="space-between center">
-                                <div *ngIf="snapshot | async as snap">
-                                    <span class="filename">{{filename}}...</span>
+
+                                <div *ngIf="dataservice.snapshot | async as snap">
+                                    <span class="filename">{{dataservice.filename}}...</span>
                                     <span class="size ml-4"> {{ snap.bytesTransferred | fileSize }}</span>
                                 </div>
-                                <div *ngIf="uploadState | async; let state">
+
+                                <div *ngIf="dataservice.uploadState | async; let state">
                                     <button mat-icon-button (click)="task.resume()" [disabled]="state === 'running'">
                                         <mat-icon>play_arrow</mat-icon>
                                     </button>
                                     <button mat-icon-button (click)="task.pause()" [disabled]="state === 'paused'">
                                         <mat-icon>pause</mat-icon>
                                     </button>
-                                    <button mat-icon-button (click)="task.cancel()"
-                                            [disabled]="!(state === 'paused' || state === 'running')">
+                                    <button mat-icon-button (click)="task.cancel()" [disabled]="!(state === 'paused' || state === 'running')">
                                         <mat-icon color="warn">cancel</mat-icon>
                                     </button>
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
-                    <div *ngIf="uploadProgress | async as pct">
-
-                        <mat-progress-bar class="example-margin" color="accent" style="background-color: aliceblue"
-                                          mode="determine" [value]="pct"></mat-progress-bar>
+                    <div *ngIf="dataservice.uploadProgress | async as pct">
+                        <mat-progress-bar class="example-margin" color="accent" style="background-color: aliceblue" mode="determine" [value]="pct"></mat-progress-bar>
                     </div>
 
 
-                    <input #passurl [value]="(downloadURL | async)" type="hidden"/>
-                    <button mat-raised-button class="post-button" (click)="save(passurl.value)" color="accent"
-                            aria-label="POST">Save
+                    <input #passurl [value]="(dataservice.downloadURL | async)" type="hidden"/>
+                    <button [disabled]="dataservice.issaved" mat-raised-button class="post-button" (click)="dataservice.savePhotos(passurl.value , dataservice.photobio)" color="accent" >Save
                     </button>
 
                 </footer>
 
             </div>
-
         </div>
+        <!---------PHOTOUPLOAD & SAVE & PROGRESSBAR ----------->
+
 
         <mat-divider></mat-divider>
 
-        <div class="timeline-item" *ngFor="let item of items | async">
+
+        <!---------PHOTO LIST----------->
+        <div class="timeline-item" *ngFor="let item of dataservice.items | async">
 
             <header fxLayout="row" fxLayoutAlign="space-between start" *ngIf="authService.userData as user">
                 <div class="user" fxLayout="row" fxLayoutAlign="start center">
@@ -68,17 +72,21 @@
                         <div class="title">
                             <span class="username">{{user.displayName}}</span>
                         </div>
-                        <div class="time">32 Minutes Ago</div>
+                        <div class="time">{{item.date | timeAgo}}</div>
+                        {{item.key}}
                     </div>
                 </div>
 
-                <button mat-icon-button aria-label="Delete" (click)="deleteItem(item.key ,item.url)">
+                <button mat-icon-button aria-label="Delete" (click)="dataservice.deletePhotos(item.key ,item.url)">
                     <mat-icon color="warn">delete</mat-icon>
                 </button>
             </header>
 
             <div class="content">
 
+                <div *ngIf="item.bio" class="message">
+                    {{item.bio}}
+                </div>
 
                 <div class="media">
                     <img src="{{item.url }}">
@@ -87,6 +95,20 @@
 
             </div>
 
+
+        </div>
+        <!---------PHOTO LIST----------->
+
+    </div>
+
+    <div class="timeline-sidebar" fxLayout="column" fxFlex="100" fxFlex.gt-sm="45" fxFlex.gt-md="35">
+
+        <div class="profile-box latest-activity" fxLayout="column">
+
+            <header class="accent" fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="title">Latest Activity</div>
+                <div class="more secondary-text">See All</div>
+            </header>
 
         </div>
     </div>

@@ -1,20 +1,16 @@
-<p>hello</p>
-<!--
-  <div id="photos-videos" class="p-24">
-    <div class="period" >
+<div id="photos-videos" class="p-24">
+    <div class="period"  >
 
         <div class="period-title">
-            <span class="name">{{period.name}}</span>
-            <span class="info">{{period.info}}</span>
+            <span class="name">PhotoGraphy</span>
+            <span class="info">PhotoGraphy</span>
         </div>
 
         <div class="period-media" fxLayout="row wrap">
-            <div class="media" *ngFor="let media of period.media">
-                <img class="preview" [src]="media.preview" title="{{media.title}}">
-                <div class="title">{{media.title}}</div>
+            <div class="media" *ngFor="let item of dataservice.items | async">
+                <img class="preview" [src]="item.url" title="{{item.bio}}">
+                <div class="title">{{item.bio}}</div>
             </div>
         </div>
     </div>
 </div>
-
-  -->
