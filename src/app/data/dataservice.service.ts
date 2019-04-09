@@ -4,6 +4,7 @@ import {AngularFireStorage, AngularFireUploadTask} from '@angular/fire/storage';
 import {Observable} from 'rxjs';
 import {finalize, map, tap} from 'rxjs/operators';
 import {ToastrService} from 'ngx-toastr';
+import {AuthService} from '../auth.service';
 
 
 @Injectable({
@@ -28,10 +29,13 @@ export class DataserviceService {
     downloadURL: Observable<string>;
 
 
+    author: any ;
+
+
     @ViewChild('fileinput')
     fileinput: ElementRef;
 
-    constructor(private Db: AngularFireDatabase, private toastr: ToastrService, private afStorage: AngularFireStorage) {
+    constructor(private authService: AuthService, private Db: AngularFireDatabase, private toastr: ToastrService, private afStorage: AngularFireStorage) {
         this.itemsRef = this.Db.list('photos');
         this.items = this.Db.list('photos').valueChanges();
     }
@@ -45,7 +49,8 @@ export class DataserviceService {
         );
     }
 
-    savePhotos = (url: string , bio: string) => {
+    savePhotos = (url , bio) => {
+
 
         if (url === '' && bio === '') {
             this.toastr.info('Wait I am Getting Your Things Done', 'Downloading', {
@@ -53,9 +58,16 @@ export class DataserviceService {
             });
         } else {
             this.issaved = true;
+
             this.today = Date.now();
-            console.log(this.today);
-            this.itemsRef.push({url: url, bio: bio, date: this.today});
+
+            this.itemsRef.push({
+                url: url, bio: bio,
+                date: this.today ,
+                author: this.authService.userData.displayName,
+                authorImg: this.authService.userData.photoURL
+            });
+
             this.toastr.success('Photos Saved', 'Saved', {
                 timeOut: 3000
             });

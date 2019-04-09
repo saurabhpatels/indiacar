@@ -64,16 +64,15 @@
         <!---------PHOTO LIST----------->
         <div class="timeline-item" *ngFor="let item of dataservice.items | async">
 
-            <header fxLayout="row" fxLayoutAlign="space-between start" *ngIf="authService.userData as user">
+            <header fxLayout="row" fxLayoutAlign="space-between start" >
                 <div class="user" fxLayout="row" fxLayoutAlign="start center">
-                    <img class="avatar" src="{{user.photoURL? user.photoURL: '/assets/dummy-user.png'}}">
+                    <img class="avatar" src="{{item.authorImg? item.authorImg: '/assets/dummy-user.png'}}">
 
                     <div fxLayout="column">
                         <div class="title">
-                            <span class="username">{{user.displayName}}</span>
+                            <span class="username">{{item.author}}</span>
                         </div>
                         <div class="time">{{item.date | timeAgo}}</div>
-                        {{item.key}}
                     </div>
                 </div>
 
