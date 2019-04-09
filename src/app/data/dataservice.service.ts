@@ -29,7 +29,6 @@ export class DataserviceService {
     downloadURL: Observable<string>;
 
 
-    author: any ;
 
 
     @ViewChild('fileinput')

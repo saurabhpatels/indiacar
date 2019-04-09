@@ -1,34 +1,45 @@
 DAILY WORK REPORT
 Name: Saurabh Patel
-Date: 08-04-2019
+Date: 09-04-2019
 StartTime: 9:50 AM
 LunchTime: 1:30 PM TO 2:15 PM
 EndTime: 07:10 PM
 
-#LearnAngular: [8H:00]
+#LearnAngular: [7H:30]
 [1H ] - Refer Angular fire Npm Doc
-        -Upload Files
-        -Cloud FireStore
-[1H ] - Observable
-        -RXjs
-        -Angular
-        -Firebase
-[30M] -Realtime bindings
-[30M] -Synchronize data in realtime.
-[30M] -AngularFirestoreCollection
-[30M] - Sync Realtime File Upload State.
-[30M] - Bind Realtime Task to Files.
-[30M] - Created sync Upload Files In Storage
-[30M] - Sync Files's Metadata,DownloadUrl,& Content
-[1H ] - Solve Issue of url sync [npm package moved from fire2 to fire]
-[1H ] - Attach Observable For Realtime sync
-        -UploadProgress
-        -UploadState
-        -DownloadURL
-        -Files
-[30M] - Sync Both (Storage & Realtime Database) Resource For Adding & Removing Files & Its Metadata
+        [30M] -Upload Files
+        [30M] -Cloud FireStore
+
+[1H ] - Solved Issue Of storage Reference
+        [30M] -Solved Download url sync callback From Storage
+        [30M] -solved Conflict Files Issue in Storage
+
+[1H ] - R&D On Relationship Between FireStorage & RealTime Database
+        [30M] -How Firebase Storage work together with the Firebase Realtime Database
+
+[1H ] - Design Pattern For Make Relation Between Saving Author's Data, File's Data & Realtime Data
+        [30M]  -Created Photos-list
+        [30M]  -Created Photos-Storage
+
+[2H ] - Created DataService
+        -Imported Angular Fire database,Storage Modules
+        -Define Observables
+        -Created Callback Methods As Per Design Pattern
+        -GetFiles With Author , Metadata
+        -Save Files With Author & Metadata
+        -Delete
+
+[1H ] - Create Author Module
+        [30M] -Injected Data services
+        [30M] -Fetched Author's Property Using Google-plus Login Api.
+
+[30M] -R&D Masonary Grid
+
+Other[30M]
+-Bank Account Issue.
 
 
-#Tommorow's Task: [09/04/2019]
--Continue To Learning Angular
+
+
+
 

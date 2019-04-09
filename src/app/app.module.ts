@@ -18,7 +18,7 @@ import {DriversModule} from './main/drivers/drivers.module';
 import {BookingsModule} from './main/bookings/bookings.module';
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import {LoginModule} from './main/login/login.module';
-
+import { NgxMasonryModule } from 'ngx-masonry';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {environment} from '../environments/environment';
@@ -75,10 +75,12 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
         StoreModule.forRoot({}),
         AngularFireDatabaseModule,
         AngularFireStorageModule,
-        ProfileModule
+        ProfileModule,
+        NgxMasonryModule
 
 
-    ], exports: [MatIconModule],
+    ], exports: [MatIconModule,
+        NgxMasonryModule],
     providers: [AuthService],
     bootstrap: [AppComponent]
 })

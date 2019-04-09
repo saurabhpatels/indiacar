@@ -10,6 +10,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule} from '@angular/fire/storage';
 import {ToastrModule} from 'ngx-toastr';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 
 
@@ -30,11 +31,14 @@ import {TimeAgoPipe} from 'time-ago-pipe';
         AngularFireModule,
         AngularFireStorageModule,
         MatProgressBarModule,
-        ToastrModule
+        ToastrModule,
+        NgxMasonryModule
     ],
     providers   : [
         ProfileService,
 
+    ], exports: [
+        NgxMasonryModule
     ]
 })
 export class ProfileModule

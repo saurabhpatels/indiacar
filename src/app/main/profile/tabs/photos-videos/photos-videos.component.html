@@ -6,6 +6,8 @@
             <span class="info">PhotoGraphy</span>
         </div>
 
+
+
         <div class="period-media" fxLayout="row wrap">
             <div class="media" *ngFor="let item of dataservice.items | async">
                 <img class="preview" [src]="item.url" title="{{item.bio}}">
