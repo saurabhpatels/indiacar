@@ -37,8 +37,6 @@ import { NgxMasonryModule } from 'ngx-masonry';
     providers   : [
         ProfileService,
 
-    ], exports: [
-        NgxMasonryModule
     ]
 })
 export class ProfileModule

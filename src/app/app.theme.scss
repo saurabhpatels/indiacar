@@ -85,7 +85,7 @@ $typography: mat-typography-config(
 @import "src/app/main/forgot-password/forgot-password.theme";
 @import "src/app/main/mail-confirm/mail-confirm.theme";
 @import "src/app/main/profile/tabs/timeline/timeline.theme";
-@import "src/app/main/profile/tabs/photos-videos/photos-videos.theme";
+
 
 
 // Define a mixin for easier access
@@ -99,7 +99,7 @@ $typography: mat-typography-config(
     @include forgot-password-theme($theme);
     @include mail-confirm-theme($theme);
     @include profile-timeline-theme($theme);
-    @include profile-photos-videos-theme($theme);
+
 }
 
 // -----------------------------------------------------------------------------------------------------

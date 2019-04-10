@@ -1,42 +1,50 @@
 DAILY WORK REPORT
 Name: Saurabh Patel
-Date: 09-04-2019
+Date: 10-04-2019
 StartTime: 9:50 AM
 LunchTime: 1:30 PM TO 2:15 PM
-EndTime: 07:10 PM
+EndTime: 07:20 PM
 
-#LearnAngular: [7H:30]
-[1H ] - Refer Angular fire Npm Doc
-        [30M] -Upload Files
-        [30M] -Cloud FireStore
+#LearnAngular: [8H:00]
+[2H ] - Refer Angular Doc
+        [30M] -Testing
+        [30M] -Karma-Jasmine
+        [30M] -Unit Testing
+        [30M] -Integration Testing
 
-[1H ] - Solved Issue Of storage Reference
-        [30M] -Solved Download url sync callback From Storage
-        [30M] -solved Conflict Files Issue in Storage
+[2H:30]- Perform Unit Testing
+         -Describe
+         -beforeEach,AfterEach,BeforeAll,AfterAll
+         -Arrange,Act, Assert
+         -Expectation & Api
+         -Fake Data,Services
+         -Isolation
 
-[1H ] - R&D On Relationship Between FireStorage & RealTime Database
-        [30M] -How Firebase Storage work together with the Firebase Realtime Database
+[2H]  - ESlint
+       -Installation
+       -Setup Config file
+       -Rules
+       -ParseOptions
+       -Specifying Parser
+       -Specifying Enviroment,Globals
+       -Configure Plugin,Rules
+       -Inject TS Type in Es lint
 
-[1H ] - Design Pattern For Make Relation Between Saving Author's Data, File's Data & Realtime Data
-        [30M]  -Created Photos-list
-        [30M]  -Created Photos-Storage
+[2H ] - Masonry Grid
+       -Read npm Doc
+       -Import Modules
+       -Created Services
+       -Sync masonry Grid
+       -Animation
+       -options
+       -RealTime Updates In Grid
+       -solved Responsive error
 
-[2H ] - Created DataService
-        -Imported Angular Fire database,Storage Modules
-        -Define Observables
-        -Created Callback Methods As Per Design Pattern
-        -GetFiles With Author , Metadata
-        -Save Files With Author & Metadata
-        -Delete
 
-[1H ] - Create Author Module
-        [30M] -Injected Data services
-        [30M] -Fetched Author's Property Using Google-plus Login Api.
 
-[30M] -R&D Masonary Grid
 
-Other[30M]
--Bank Account Issue.
+#Tommorow'Task : [10/04/2019]
+-Learning Angular
 
 
 

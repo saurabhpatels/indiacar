@@ -1,18 +1,20 @@
-<div id="photos-videos" class="p-24">
-    <div class="period"  >
 
-        <div class="period-title">
-            <span class="name">PhotoGraphy</span>
-            <span class="info">PhotoGraphy</span>
-        </div>
+<div class="masonry-demo">
 
 
 
-        <div class="period-media" fxLayout="row wrap">
-            <div class="media" *ngFor="let item of dataservice.items | async">
-                <img class="preview" [src]="item.url" title="{{item.bio}}">
-                <div class="title">{{item.bio}}</div>
+
+
+    <ngx-masonry [options]="masonryOptions" [useImagesLoaded]="true"  style="position:relative;">
+        <ngx-masonry-item *ngFor="let picture of dataservice.items | async" class="masonry-item">
+            <img src="{{picture.url}}" style="margin: 10px; width:90%">
+            <div style="position:absolute;top:0;right:0;" data-role="fieldcontain">
+                <button mat-icon-button aria-label="Delete" (click)="dataservice.deletePhotos(picture.key ,picture.url)">
+                    <mat-icon color="warn">delete</mat-icon>
+                </button>
             </div>
-        </div>
-    </div>
+        </ngx-masonry-item>
+    </ngx-masonry>
+
 </div>
+
