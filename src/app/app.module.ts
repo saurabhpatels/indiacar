@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatMomentDateModule} from '@angular/material-moment-adapter';
-import {MatButtonModule, MatIconModule} from '@angular/material';
+
+
 import {TranslateModule} from '@ngx-translate/core';
 import 'hammerjs';
 import {FuseModule} from '@fuse/fuse.module';
@@ -44,9 +44,6 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
         BrowserAnimationsModule,
         HttpClientModule,
         TranslateModule.forRoot(),
-        MatMomentDateModule,
-        MatButtonModule,
-        MatIconModule,
         SlimLoadingBarModule,
         // Fuse modules
         FuseModule.forRoot(fuseConfig),
@@ -79,8 +76,9 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
         NgxMasonryModule
 
 
-    ], exports: [MatIconModule,
-        NgxMasonryModule],
+    ], exports: [
+        NgxMasonryModule
+    ],
     providers: [AuthService],
     bootstrap: [AppComponent]
 })
