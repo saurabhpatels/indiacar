@@ -6,45 +6,45 @@ LunchTime: 1:30 PM TO 2:15 PM
 EndTime: 07:20 PM
 
 #LearnAngular: [8H:00]
-[2H ] - Refer Angular Doc
-        [30M] -Testing
-        [30M] -Karma-Jasmine
-        [30M] -Unit Testing
-        [30M] -Integration Testing
+[30M ] Refer TS lint Doc
 
-[2H:30]- Perform Unit Testing
-         -Describe
-         -beforeEach,AfterEach,BeforeAll,AfterAll
-         -Arrange,Act, Assert
-         -Expectation & Api
-         -Fake Data,Services
-         -Isolation
+[1H] - TypeScript-specific
+       -find errors
+       -TypeScript features
 
-[2H]  - ESlint
-       -Installation
-       -Setup Config file
-       -Rules
-       -ParseOptions
-       -Specifying Parser
-       -Specifying Enviroment,Globals
-       -Configure Plugin,Rules
-       -Inject TS Type in Es lint
+[1H] - TSLint core rules
+        -syntactic
+        -semantic
 
-[2H ] - Masonry Grid
-       -Read npm Doc
-       -Import Modules
-       -Created Services
-       -Sync masonry Grid
-       -Animation
-       -options
-       -RealTime Updates In Grid
-       -solved Responsive error
+[1H] - Functionality
+        -Catch Common errors
+        -Confusing Constructs That are prone to producing bugs
 
+[1H] - Maintainability
+        -Maintenance Easier
+        -Style
+
+[30M] - Discuss About FT-Live Project With Sandeep Solanki
+        -Clone The Project
+        -Review The Project
+
+[3H]  - TS lint & Prettier
+        -R&D On Tslint & Prettier Conflict issue
+        -Install Prettier
+        -Create Custom Rules To Avoid Conflict Between Tslint & Prettier
+        -install tslint-config-prettier
+        -Modify tsconfig.json file in Order to Work Prettier
+        -Configure Web storm To run tslint & Prettier
+        -Configure File watcher
+        -Solve Conflict Error
+        -Write Custom Rules
 
 
 
-#Tommorow'Task : [10/04/2019]
--Learning Angular
+
+
+
+
 
 
 
