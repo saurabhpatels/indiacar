@@ -1,9 +1,8 @@
-import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {fuseAnimations} from '@fuse/animations';
-import {DataserviceService} from '../../../../data/dataservice.service';
-import {Observable} from 'rxjs';
-import {NgxMasonryOptions} from 'ngx-masonry';
-
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { fuseAnimations } from '@fuse/animations';
+import { DataserviceService } from '../../../../data/dataservice.service';
+import { Observable } from 'rxjs';
+import { NgxMasonryOptions } from 'ngx-masonry';
 
 @Component({
     selector: 'profile-photos-videos',
@@ -13,21 +12,19 @@ import {NgxMasonryOptions} from 'ngx-masonry';
     animations: fuseAnimations
 })
 export class ProfilePhotosVideosComponent implements OnInit, OnDestroy {
-
+    items: Observable<any[]>;
     public masonryOptions: NgxMasonryOptions = {
         transitionDuration: '0.2s',
         gutter: 50,
         fitWidth: false, //
         columnWidth: 20,
-        percentPosition: false};
+        percentPosition: false
+    };
     constructor(private dataservice: DataserviceService) {}
-
-    ngOnInit(): void {
-        this.dataservice.getPhotos();
-
+    load() {
+        this.items = this.dataservice.getPhotos();
     }
+    ngOnInit(): void {}
 
-
-    ngOnDestroy(): void {
-    }
+    ngOnDestroy(): void {}
 }

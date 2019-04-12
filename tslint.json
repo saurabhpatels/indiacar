@@ -1,4 +1,7 @@
-{
+{ "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+],
     "rulesDirectory": [
         "node_modules/codelyzer"
     ],
@@ -75,6 +78,9 @@
         "no-use-before-declare": false,
         "no-var-keyword": true,
         "object-literal-sort-keys": false,
+        "object-literal-shorthand": false,
+        "no-submodule-imports": false,
+        "ordered-imports": false,
         "one-line": false,
         "prefer-const": true,
         "quotemark": [
@@ -83,8 +89,7 @@
         ],
         "radix": true,
         "semicolon": [
-            true,
-            "always"
+            true
         ],
         "triple-equals": [
             true,

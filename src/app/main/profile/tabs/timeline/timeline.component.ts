@@ -1,8 +1,9 @@
-import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {fuseAnimations} from '@fuse/animations';
-import {AuthService} from '../../../../auth.service';
-import {DatePipe} from '@angular/common';
-import {DataserviceService} from '../../../../data/dataservice.service';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { fuseAnimations } from '@fuse/animations';
+import { AuthService } from '../../../../auth.service';
+import { DatePipe } from '@angular/common';
+import { DataserviceService } from '../../../../data/dataservice.service';
+import { Observable } from 'rxjs';
 @Component({
     selector: 'profile-timeline',
     templateUrl: './timeline.component.html',
@@ -12,11 +13,14 @@ import {DataserviceService} from '../../../../data/dataservice.service';
     providers: [DatePipe]
 })
 export class ProfileTimelineComponent implements OnInit, OnDestroy {
-
-    constructor(private authService: AuthService, private dataservice: DataserviceService) {}
+    items: Observable<any[]>;
+    constructor(
+        private authService: AuthService,
+        private dataservice: DataserviceService
+    ) {}
 
     ngOnInit(): void {
-        this.dataservice.getPhotos();
+        this.items = this.dataservice.getPhotos();
     }
     ngOnDestroy(): void {}
 }

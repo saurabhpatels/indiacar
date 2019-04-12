@@ -1,19 +1,21 @@
 
 <div class="masonry-demo">
 
-
+    <div class="actions" fxLayout="row" fxLayoutAlign="end center" [@animate]="{value:'*',params:{delay:'200ms'}}">
+        <button mat-raised-button color="accent" aria-label="Follow" (click)="load()">Load</button>
+    </div>
 
 
 
     <ngx-masonry [options]="masonryOptions" [useImagesLoaded]="true"  style="position:relative;">
-        <ngx-masonry-item *ngFor="let picture of dataservice.items | async" class="masonry-item">
-            <img src="{{picture.url}}" style="margin: 10px; width:90%">
+        <ngxMasonryItem *ngFor="let picture of items | async" class="masonry-item"  style="margin: 10px; box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);">
+            <img src="{{picture.url}}" style=" width:100%">
             <div style="position:absolute;top:0;right:0;" data-role="fieldcontain">
                 <button mat-icon-button aria-label="Delete" (click)="dataservice.deletePhotos(picture.key ,picture.url)">
                     <mat-icon color="warn">delete</mat-icon>
                 </button>
             </div>
-        </ngx-masonry-item>
+        </ngxMasonryItem>
     </ngx-masonry>
 
 </div>

@@ -42,13 +42,11 @@
 
                     </div>
 
-                    <div *ngIf="dataservice.uploadProgress | async as pct">
-                        <mat-progress-bar class="example-margin" color="accent" style="background-color: aliceblue" mode="determine" [value]="pct"></mat-progress-bar>
-                    </div>
+
 
 
                     <input #passurl [value]="(dataservice.downloadURL | async)" type="hidden"/>
-                    <button [disabled]="dataservice.issaved" mat-raised-button class="post-button" (click)="dataservice.savePhotos(passurl.value , dataservice.photobio)" color="accent" >Save
+                    <button [disabled]="!(dataservice.downloadURL | async)" mat-raised-button class="post-button" (click)="dataservice.savePhotos(passurl.value , dataservice.photobio)" color="accent" >Save
                     </button>
 
                 </footer>
@@ -62,7 +60,7 @@
 
 
         <!---------PHOTO LIST----------->
-        <div class="timeline-item" *ngFor="let item of dataservice.items | async">
+        <div class="timeline-item" *ngFor="let item of items | async">
 
             <header fxLayout="row" fxLayoutAlign="space-between start" >
                 <div class="user" fxLayout="row" fxLayoutAlign="start center">
