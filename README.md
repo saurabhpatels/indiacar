@@ -1,9 +1,7 @@
-# Inida - Car
+# Angular Firebase Demo
 
 India Car Taxi& Cabs
 
-## The Community
-Smarten Digital
 
 ## Development server
 
